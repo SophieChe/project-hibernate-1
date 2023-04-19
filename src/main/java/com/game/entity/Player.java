@@ -4,10 +4,11 @@ import java.util.Date;
 
 @Entity
 @Table(schema = "rpg", name = "player")
-
+@NamedQuery(name = "player_getAllCount", query = "select count(p) from Player p")
 
 public class Player {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false)
     private Long id;
 
